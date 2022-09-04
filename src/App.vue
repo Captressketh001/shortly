@@ -44,7 +44,7 @@
               <div class="link-content" v-for="link in shortenedLink" :key="link" >
                 <p class="long-link">{{link.oldLink}}</p>
                 <p class="short-link">{{link.shortenedLink}}</p>
-                <button v-if="!link.copied" @click="copiedLink(link.shortenedLink)">Copy</button>
+                <button class="copy" v-if="!link.copied" @click="copiedLink(link.shortenedLink)">Copy</button>
                 <button v-else class="copied">Copied!</button>
               </div>
               </TransitionGroup>

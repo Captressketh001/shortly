@@ -567,7 +567,7 @@ span.connector{
     margin: 0 auto;
     cursor: pointer;
 }
-.call-to-action button:hover, .link-input-container button:hover, .menu li a.button:hover, .link-content button:hover{
+.call-to-action button:hover, .link-input-container button:hover, .menu li a.button:hover, .link-content button.copy:hover{
     background: hsl(180, 87%, 65%);
     /* hsl(180, 87%, 65%) */
 }
