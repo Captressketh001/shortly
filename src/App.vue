@@ -146,7 +146,7 @@ export default {
       );
       navigator.clipboard.writeText(link);
       selectLink.copied = true;
-      this.updateLocalStorage();
+      // this.updateLocalStorage();
     },
     updateLocalStorage(){
         localStorage.setItem(
