@@ -99,6 +99,7 @@ nav ul li.resources{
     height: 600px;
     width: 90%;
     margin-left: auto;
+   
     /* align-items: center; */
     /* margin: 0 auto; */
 }
@@ -166,6 +167,7 @@ nav ul li.resources{
         flex-direction: column-reverse;
         text-align: center;
         height: auto;
+        margin-bottom: 131px
     }
     .intro-img{
         width: 90%;
@@ -207,18 +209,21 @@ nav ul li.resources{
     align-items: center;
     position: relative;
     top: -60px;
-    flex-direction: column;
+    /* flex-direction: column; */
 }
 .link-input-container div{
     display: flex;
-    width: 100%;
-    /* flex-direction: column; */
+    width: 75%;
+    flex-direction: column;
     justify-content: space-around;
 }
-.link-input-container input{
-    width: 75%;
-   
+.link-input-container div.invalid{
+    margin-top: 16px;
 }
+ .link-input-container input{
+    width: 100%;
+   
+} 
 .link-input-container input[type = 'url' i]{
     padding: 2px 35px;
 }
@@ -226,12 +231,23 @@ nav ul li.resources{
     width: 10%;
     background-color: hsl(180, 66%, 49%);
     color: #fff;
+    cursor: pointer;
 }
 .link-input-container input, .link-input-container button{
     height: 40px;
     outline: none;
     border-radius: 5px;
     border: none;
+} 
+.link-input-container input.invalid{
+    border:2px solid hsl(0, 87%, 67%);;
+}
+.link-input-container input.invalid::placeholder{
+    color:hsl(0, 32%, 67%);
+}
+.link-input-container span{
+    color: hsl(0, 87%, 67%);
+    font-size: 10px;
 }
 .link-list{
     margin-top: -56px
@@ -252,6 +268,9 @@ nav ul li.resources{
 .link-content .long-link{
     flex: 1;
     color: hsl(255, 11%, 22%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .link-content .short-link{
     padding-right: 20px;
@@ -265,16 +284,35 @@ nav ul li.resources{
     width: 10%;
     background-color: hsl(180, 66%, 49%);
     color: #fff;
+    cursor: pointer;
 }
 
 @media screen and (max-width:768px){
     .link-section{
         height: auto;
     }
+    .link-content .long-link{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 15px;
+        width: 95%;
+        border-bottom: 1px solid hsl(257, 7%, 63%);
+        text-align: center;
+    }
     .link-input-container{
         flex-direction: column;
     }
-    .link-input-container input, .link-input-container button{
+     .link-input-container div{
+        width: 80%;
+    }
+    .link-input-container div.invalid{
+        margin-top: 0px;
+    }
+    .link-input-container input[type = 'url' i] {
+        padding: 2px 10px;
+    }
+    .link-input-container button{
         width: 80%;
     }
     .link-content{
@@ -290,17 +328,13 @@ nav ul li.resources{
 @media screen  and (min-width:769px){
     .intro-text h1{
         font-size: 40px;
-    }
+    }  
 }
 @media screen  and (min-width:1025px){
     .intro-text h1{
         font-size: 60px;
     }
 }
-/* .link-stat{
-    width: 100%;
-    margin: 0 auto;
-} */
 .link-stat-description{
     width: 80%;
     margin: 54px auto;
@@ -346,7 +380,6 @@ nav ul li.resources{
     flex-direction: column;
     justify-content: space-between;
     gap: 80px;
-    /* align-content: space-between; */
 }
 .link-items{
     padding: 50px 30px;
@@ -416,7 +449,7 @@ nav ul li.resources{
 .customizable::before{
     content: url(/images/icon-fully-customizable.svg);
 }
-span{
+span.connector{
     width: 80%;
     height: 10px;
     background: hsl(180, 66%, 49%);
@@ -425,13 +458,13 @@ span{
     margin: 0 134px;
 }
 @media screen and (max-width:1024px){
-    span{
+    span.connector{
         width: 80%;
         height: 10px;
         background: hsl(180, 66%, 49%);
         position: absolute;
         /* top: 71%; */
-        margin: 0 98px;
+        margin: 0 102px;
     }
 }
 @media screen and (max-width:768px){
@@ -454,13 +487,16 @@ span{
     .link-header p{
         width: auto;
     }
+    .link-items p, .link-items h2{
+        text-align: center;
+    }
     .detailed, .customizable{
         align-self: auto;
     }
     .brand::before, .detailed::before, .customizable::before{
-        margin-left: -31px;
+        left: 43%
     }
-    span{
+    span.connector{
         width: 2%;
         height: 538px;
         background: hsl(180, 66%, 49%);
@@ -471,16 +507,19 @@ span{
    
 }
 @media screen and (max-width:425px){
-    span{
+    span.connector{
         width: 2%;
         background: hsl(180, 66%, 49%);
         position: absolute;
         margin-top: -947px;
         left: 106px;
     }
+    .brand::before, .detailed::before, .customizable::before{
+        left: 38%
+    }
 }
 @media screen and (max-width:375px){
-    span{
+    span.connector{
         width: 2%;
         background: hsl(180, 66%, 49%);
         position: absolute;
@@ -488,14 +527,20 @@ span{
         left: 191px;
         
     }
+    .brand::before, .detailed::before, .customizable::before{
+        left: 40%
+    }
 }
 @media screen and (max-width:320px){
-    span{
+    span.connector{
         width: 2%;
         background: hsl(180, 66%, 49%);
         position: absolute;
-        margin: -963px 0px 0px 0px;
+        margin: -1001px 0px 0px 0px;
         left: 162px;
+    }
+    .brand::before, .detailed::before, .customizable::before{
+        left: 37%
     }
 }
 /* Call to action */
@@ -565,6 +610,9 @@ footer .footer-items li a{
 footer .social-icon{
     display: flex;
 }
+footer ul li{
+    cursor: pointer;
+}
 footer .social-icon li{
     padding-right: 20px;
 }
@@ -581,4 +629,13 @@ footer .social-icon li{
         align-items: center;
         justify-content: center
     }
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 2.5s ease;
+}
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
