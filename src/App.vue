@@ -55,7 +55,7 @@
                   <p>Track how your links are performing across the web with our advanced statistics dashboard</p>
                 </div>
             </div>
-            <span class="connector"></span>
+            <!-- <span class="connector"></span> -->
         <div class="link-body">
           <div class="link-items brand">
             <h2>Brand Recognition</h2>
