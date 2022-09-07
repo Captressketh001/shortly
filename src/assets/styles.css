@@ -382,11 +382,10 @@ nav ul li.resources{
     gap: 80px;
 }
 .link-items{
-    padding: 50px 30px;
+    padding: 20px 35px 20px;
     background: #fff;
     border-radius: 5px;
     height: auto;
-    
 }
 .link-items h2{
     margin-top: 18px;
@@ -401,20 +400,23 @@ nav ul li.resources{
     display: flex;
     justify-content: space-between;
     gap: 30px;
-    height: 370px;
+    height: 270px;
     position: relative;
     width: 80%;
     margin: 60px auto;
+    z-index: 1;
 }
-/* .link-body::after{
-    content: '';
+.link-body::before{
+    content: "";
     position: absolute;
-    width: 100%;
-    height: 10px;
-    background: hsl(180, 66%, 49%);
-    top: 57%;
+    height: 7px;
+    width: 700px;
+    background: #2acfcf;
+    transform: translateX(-50%);
     z-index: -1;
-} */
+    right: -197px;
+    top: 36%;
+}
 .link-header {
     text-align: center;
 }
@@ -425,7 +427,7 @@ nav ul li.resources{
     content: url(/images/icon-brand-recognition.svg);
 }
 .brand::before, .customizable::before, .detailed::before{
-    margin-top: -81px;
+    margin-top: -63px;
     position: absolute;
     border-radius: 50%;
     background: hsl(257, 27%, 26%);
@@ -449,25 +451,28 @@ nav ul li.resources{
 .customizable::before{
     content: url(/images/icon-fully-customizable.svg);
 }
-span.connector{
-    width: 80%;
-    height: 10px;
-    background: hsl(180, 66%, 49%);
-    position: absolute;
-    top: 47%;
-    margin: 0 134px;
-}
 @media screen and (max-width:1024px){
-    span.connector{
-        width: 80%;
-        height: 10px;
-        background: hsl(180, 66%, 49%);
+    .link-body{
+        height: auto;
+    }
+    .link-body::before {
+        content: "";
         position: absolute;
-        /* top: 71%; */
-        margin: 0 102px;
+        height: 7px;
+        width: 700px;
+        background: #2acfcf;
+        transform: translateX(-50%);
+        z-index: -1;
+        right: 296px;
+        top: 36%;
     }
 }
-@media screen and (max-width:768px){
+@media screen and (max-width:1200px){
+    .link-body{
+        height:300px
+    }
+}
+@media screen and (max-width:1000px){
     .link{
         padding-bottom: 30px;
         height: auto;
@@ -494,50 +499,56 @@ span.connector{
         align-self: auto;
     }
     .brand::before, .detailed::before, .customizable::before{
-        left: 43%
+        left: 44%
     }
-    span.connector{
+    .link-body::before{
         width: 2%;
-        height: 538px;
-        background: hsl(180, 66%, 49%);
-        position: absolute;
-        margin-top: -597px;
-        left: 271px; top: 71%;
+        height: 500px;
+        width: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+        z-index: -1;
     }
    
 }
 @media screen and (max-width:425px){
-    span.connector{
+    .link-body::before{
         width: 2%;
-        background: hsl(180, 66%, 49%);
-        position: absolute;
-        margin-top: -947px;
-        left: 106px;
+        height: 500px;
+        width: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 211px;
+        z-index: -1;
     }
     .brand::before, .detailed::before, .customizable::before{
         left: 38%
     }
 }
 @media screen and (max-width:375px){
-    span.connector{
+    .link-body::before{
         width: 2%;
-        background: hsl(180, 66%, 49%);
-        position: absolute;
-        margin: -950px 0px 0px 0px;
-        left: 191px;
-        
+        height: 500px;
+        width: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 243px;
+        z-index: -1;
     }
     .brand::before, .detailed::before, .customizable::before{
-        left: 40%
+        left: 38%
     }
 }
 @media screen and (max-width:320px){
-    span.connector{
+    .link-body::before{
         width: 2%;
-        background: hsl(180, 66%, 49%);
-        position: absolute;
-        margin: -1001px 0px 0px 0px;
-        left: 162px;
+        height: 500px;
+        width: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 262px;
+        z-index: -1;
     }
     .brand::before, .detailed::before, .customizable::before{
         left: 37%
