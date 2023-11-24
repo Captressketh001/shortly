@@ -17,7 +17,7 @@ export default createStore({
             context.commit('set_Link', data)
         },
         async getLink(context, data) {
-            return await axios.get('https://cleanuri.com/api/v1/shorten?url=' + data.url + '&domain=' + data.domain, {
+            return await axios.post('https://cleanuri.com/api/v1/shorten?url=' + data.url + '&domain=' + data.domain, {
 
             })
                 .then(res =>{
