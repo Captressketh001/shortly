@@ -138,6 +138,7 @@ export default {
           }
         }).catch(e =>{
           console.log(e)
+	  alert(e)
         })
     },
     copiedLink(link) {
